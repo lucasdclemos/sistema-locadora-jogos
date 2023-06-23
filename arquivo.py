@@ -1,5 +1,5 @@
 import json
-
+from time import sleep
 
 def monta_arquivo_solicitacao(nome):
   dados = json.dumps(nome, indent=4)
@@ -8,11 +8,15 @@ def monta_arquivo_solicitacao(nome):
   arquivo_solicitacao.close()
   return
 
-def resposta_fornecedor():
-  f = open("valor.json", "r")
+def resposta_fornecedor(nome):
+  sleep(1)
+  f = open("retorno.json", "r")
   dados = f.read()
   dict = json.loads(dados)
-  return dict["valor"]
+  for jogo in dict:
+    if jogo == nome:
+      valor = dict[jogo]
+  return valor
 
 def arquivo_caixa():
   f = open("arquivos/caixa.json", "r")

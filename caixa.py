@@ -24,7 +24,7 @@ def aluga_jogo():
 
 # Função para quando a locadora quer comprar um novo jogo
 def compra_jogo(nome, valor):
-  if int(caixa_dict['saldo']) < valor:
+  if int(caixa_dict['saldo']) < valor and valor > 0:
     print("Caixa não suficiente para comprar esse jogo")
     return 1
   else:
