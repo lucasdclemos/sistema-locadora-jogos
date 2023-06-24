@@ -1,6 +1,6 @@
-from estoque import adiciona_jogo_catalogo, cadastrar_jogo_alugado, verifica_estoque, recupera_estoque, recupera_jogos_alugados, salva_dados_estoque, salva_dados_jogos_alugados
-from caixa import  recupera_dados_caixa, salva_dados_caixa
-from usuario import verifica_usuario, recupera_arquivo_usuario, salva_dados_usuarios
+from estoque import *
+from caixa import  *
+from usuario import *
 import json
 
 recupera_dados_caixa()
@@ -8,15 +8,11 @@ recupera_arquivo_usuario()
 recupera_jogos_alugados()
 recupera_estoque()
 
-adiciona_jogo_catalogo("Jogo da Vida")
-adiciona_jogo_catalogo("Banco Imobiliario")
-adiciona_jogo_catalogo("Guerra Naval")
-
-print("Digite o nome do cliente que está relacionado com o alguel. Caso desejar sair do sistema, digite -1 no campo de 'Nome cliente'")
+print("Digite o nome do cliente que está relacionado com o alguel. Caso desejar sair do sistema, digite 'quit' no campo de 'Nome cliente'")
 
 while True:
   cliente = input("Nome e sobrenome do cliente: ")
-  if cliente == "-1":
+  if cliente == "quit":
     salva_dados_caixa()
     salva_dados_usuarios()
     salva_dados_estoque()
@@ -24,5 +20,14 @@ while True:
     exit()
   id_cliente = verifica_usuario(cliente)
   jogo_desejado = input("Nome do jogo solicitado: ")
+  print("\n")
   # print(jogo_desejado)
-  cadastrar_jogo_alugado(jogo_desejado, id_cliente)
+  retorno = cadastrar_jogo_alugado(jogo_desejado, id_cliente)
+  if retorno == 1:
+    print("O jogo foi alugado com sucesso. O caixa da loja agora é " + str(caixa_dict['saldo']))
+  elif retorno == -1:
+    print("O jogo foi comprado com sucesso")
+  else:
+    print("Caixa não suficiente para comprar esse jogo")
+  
+  print("\n")

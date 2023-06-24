@@ -1,6 +1,6 @@
 import json
+import os
 from time import sleep
-
 def monta_arquivo_solicitacao(nome):
   dados = json.dumps(nome, indent=4)
   arquivo_solicitacao = open("requisicao.json", "wt")
@@ -9,7 +9,8 @@ def monta_arquivo_solicitacao(nome):
   return
 
 def resposta_fornecedor(nome):
-  sleep(1)
+  while os.path.exists("retorno.json") == False:
+    sleep(0.01)
   f = open("retorno.json", "r")
   dados = f.read()
   dict = json.loads(dados)

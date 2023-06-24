@@ -5,7 +5,7 @@ import json
 usuarios_dict = {}
 
 def salva_dados_usuarios():
-  salva_dados("usuario.json", usuarios_dict)
+  salva_dados("arquivos/usuario.json", usuarios_dict)
   return
 
 def recupera_arquivo_usuario():
