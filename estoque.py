@@ -20,6 +20,10 @@ def recupera_jogos_alugados():
   return
 
 def adiciona_jogo_catalogo(nome, quantidade):
+  for jogo in estoque_dict:
+    if estoque_dict[jogo]["nome"] == nome:
+      estoque_dict[jogo]["quantidade"] += quantidade
+      return
   novo_id = len(estoque_dict) + 1
   dict_auxiliar = dict(nome = nome, quantidade = quantidade)
   estoque_dict.update({novo_id: dict_auxiliar})
