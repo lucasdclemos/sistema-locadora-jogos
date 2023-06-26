@@ -27,6 +27,8 @@ while True:
     print("O jogo foi alugado com sucesso. O caixa da loja agora é " + str(caixa_dict['saldo']))
   elif retorno == -1:
     print("O jogo foi comprado com sucesso")
+  elif retorno == -5:
+    print("O fornecedor não possui o jogo em estoque")
   else:
     print("Caixa não suficiente para comprar esse jogo")
   

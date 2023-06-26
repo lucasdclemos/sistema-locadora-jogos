@@ -17,6 +17,7 @@ def resposta_fornecedor(nome):
   for jogo in dict:
     if jogo == nome:
       valor = dict[jogo]
+  os.remove("retorno.json")
   return valor
 
 def arquivo_caixa():

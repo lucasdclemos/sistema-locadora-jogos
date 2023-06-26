@@ -57,7 +57,7 @@ def testa_modulo_caixa():
     else:
         print("ERRO -> Teste para o caixa com a compra de um jogo novo")
     # Teste para a compra de um jogo sem saldo suficiente
-    if compra_jogo("Jogo5", 7) == -2:
+    if compra_jogo("Jogo5", 100) == -2:
         print("OK -> Teste para o caixa com a compra de um jogo novo, mas sem saldo suficiente")
     else:
         print("ERRO -> Teste para o caixa com a compra de um jogo novo, mas sem saldo suficiente")
