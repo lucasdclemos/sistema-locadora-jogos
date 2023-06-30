@@ -20,7 +20,6 @@ def salva_dados_caixa():
 # Função para quando um usuário está alugando um jogo
 def aluga_jogo():
   caixa_dict['saldo'] += 3
-  # print("O aluguel foi concluído com sucesso. O caixa da loja agora é " + str(caixa_dict['saldo']))
   return 1
 
 # Função para quando a locadora quer comprar um novo jogo
@@ -31,3 +30,4 @@ def compra_jogo(nome, valor):
     caixa_dict['saldo'] -= valor
     adiciona_jogo_catalogo(nome, 1)
     return -1
+

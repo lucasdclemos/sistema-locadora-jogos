@@ -46,13 +46,12 @@ def cadastrar_jogo_alugado(nome, usuario_id):
     return compra_jogo(nome, valor)
   else:
     print("O jogo não existe no estoque")
-    monta_arquivo_solicitacao({"jogos":[{"nome": nome, "quantidade": 1}]})
+    monta_arquivo_solicitacao({"jogos":[{"nome": nome, "quantidade": 2}]})
     print("A soliticação do jogo já foi enviada para o fornecedor.")
     valor = resposta_fornecedor(nome)
     if valor == -1:
       return -5
     return compra_jogo(nome, valor)
-  # print(jogos_alugados_dict)
   return 0
 
 def verifica_estoque(nome):

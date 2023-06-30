@@ -21,7 +21,6 @@ while True:
   id_cliente = verifica_usuario(cliente)
   jogo_desejado = input("Nome do jogo solicitado: ")
   print("\n")
-  # print(jogo_desejado)
   retorno = cadastrar_jogo_alugado(jogo_desejado, id_cliente)
   if retorno == 1:
     print("O jogo foi alugado com sucesso. O caixa da loja agora é " + str(caixa_dict['saldo']))
@@ -33,3 +32,8 @@ while True:
     print("Caixa não suficiente para comprar esse jogo")
   
   print("\n")
+
+
+
+
+  

@@ -62,7 +62,9 @@ def testa_modulo_caixa():
     else:
         print("ERRO -> Teste para o caixa com a compra de um jogo novo, mas sem saldo suficiente")
 
-
+print("Testes módulo usuário")
 testa_modulo_usuario() 
+print("Testes módulo estoque")
 testa_modulo_estoque()
+print("Testes módulo caixa")
 testa_modulo_caixa()
